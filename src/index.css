@@ -2,10 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+    header li {
+        @apply text-Grayscale-5 text-base hover:text-Primary-5 transition-all;
+    }
+    .btn-sm {
+        @apply bg-Primary-3 text-Grayscale-5 flex items-center gap-x-2 px-sp-3 py-sp-2 rounded-sp-5 hover:bg-Primary-4 transition-all;
+    }
+}
+
+html,
+body {
+    font-family: "Quicksand", "Noto Sans TC", sans-serif;
+}
+
 .logo {
     width: 186px;
     height: 48px;
-	background-image: url(./public/logo.svg);
+    background-image: url(./public/logo.svg);
     text-indent: 101%;
     overflow: hidden;
     white-space: nowrap;

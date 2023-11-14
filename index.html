@@ -4,18 +4,38 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500;700&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+    <title>2023 F2E 立委競選官網</title>
   </head>
   <body>
     <header class="px-16 py-4">
-      <nav>
+      <nav class="flex justify-between items-center">
         <h1 class="logo">候選人03黑新星</h1>
-        <ul>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
+        <div class="flex gap-x-sp-3 flex-none">
+          <a class="btn-sm" href="#">
+            <img class="w-6" src="./src/images/HandCoins.svg" alt="">小額捐款
+          </a>
+          <ul class="flex gap-x-sp-4 items-center">
+            <li><a href="#">候選主張</a></li>
+            <li><a href="#">最新活動</a></li>
+            <li><a href="#">政策議題</a></li>
+            <li><a href="#">服務信箱</a></li>
+          </ul>
+        </div>
+        <div class="flex gap-x-sp-3">
+          <a href="#">
+            <img src="./src/images/FacebookLogo.svg" alt="Facebook">
+          </a>
+          <a href="#">
+            <img src="./src/images/InstagramLogo.svg" alt="Instagram">
+          </a>
+          <a href="#">
+            <img src="./src/images/YoutubeLogo.svg" alt="Youtube">
+          </a>
+        </div>
       </nav>
     </header>
     <script type="module" src="/main.js"></script>

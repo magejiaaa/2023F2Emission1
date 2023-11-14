@@ -6,8 +6,33 @@
     header li {
         @apply text-Grayscale-5 text-base hover:text-Primary-5 transition-all;
     }
+    main {
+        @apply px-16 flex flex-col gap-y-sp-6;
+    }
     .btn-sm {
         @apply bg-Primary-3 text-Grayscale-5 flex items-center gap-x-2 px-sp-3 py-sp-2 rounded-sp-5 hover:bg-Primary-4 transition-all;
+    }
+    .mediaIcon {
+        @apply flex gap-x-sp-3;
+    }
+    .mediaIcon img {
+        @apply hover:scale-125 duration-300 transition-all;
+    }
+    .banner {
+        @apply rounded-sp-3 bg-Grayscale-2 relative;
+    }
+    .animateText {
+        @apply text-Grayscale-0 text-[260px]/[320px] font-bold tracking-[13px] flex-none cursor-default select-none;
+    }
+    .animateText img {
+        width: 200px;
+        display: inline-block;
+    }
+    .maintitle {
+        @apply text-Primary-5 text-5xl/[72px] font-bold flex flex-col gap-2 w-[264px] flex-none;
+    }
+    .maintitle span {
+        @apply text-xl font-normal;
     }
 }
 
@@ -19,7 +44,7 @@ body {
 .logo {
     width: 186px;
     height: 48px;
-    background-image: url(./public/logo.svg);
+    background: url(./public/logo.svg) no-repeat center / cover ;
     text-indent: 101%;
     overflow: hidden;
     white-space: nowrap;

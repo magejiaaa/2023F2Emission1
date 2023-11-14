@@ -1,43 +1,108 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- google font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500;700&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
-    <title>2023 F2E 立委競選官網</title>
-  </head>
-  <body>
-    <header class="px-16 py-4">
-      <nav class="flex justify-between items-center">
-        <h1 class="logo">候選人03黑新星</h1>
-        <div class="flex gap-x-sp-3 flex-none">
-          <a class="btn-sm" href="#">
-            <img class="w-6" src="./src/images/HandCoins.svg" alt="">小額捐款
-          </a>
-          <ul class="flex gap-x-sp-4 items-center">
-            <li><a href="#">候選主張</a></li>
-            <li><a href="#">最新活動</a></li>
-            <li><a href="#">政策議題</a></li>
-            <li><a href="#">服務信箱</a></li>
-          </ul>
-        </div>
-        <div class="flex gap-x-sp-3">
-          <a href="#">
-            <img src="./src/images/FacebookLogo.svg" alt="Facebook">
-          </a>
-          <a href="#">
-            <img src="./src/images/InstagramLogo.svg" alt="Instagram">
-          </a>
-          <a href="#">
-            <img src="./src/images/YoutubeLogo.svg" alt="Youtube">
-          </a>
-        </div>
-      </nav>
-    </header>
-    <script type="module" src="/main.js"></script>
-  </body>
+<html lang="zh-tw">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500;700&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+  <title>2023 F2E 立委競選官網</title>
+</head>
+
+<body>
+  <!-- 選單 -->
+  <header class="px-16 py-4">
+    <nav class="flex justify-between items-center">
+      <h1 class="logo">候選人03黑新星</h1>
+      <div class="flex gap-x-sp-3 flex-none">
+        <a class="btn-sm" href="#">
+          <img class="w-6" src="./src/images/HandCoins.svg" alt="">小額捐款
+        </a>
+        <ul class="flex gap-x-sp-4 items-center">
+          <li><a href="#">候選主張</a></li>
+          <li><a href="#">最新活動</a></li>
+          <li><a href="#">政策議題</a></li>
+          <li><a href="#">服務信箱</a></li>
+        </ul>
+      </div>
+      <div class="mediaIcon">
+        <a href="#">
+          <img src="./src/images/FacebookLogo.svg" alt="Facebook">
+        </a>
+        <a href="#">
+          <img src="./src/images/InstagramLogo.svg" alt="Instagram">
+        </a>
+        <a href="#">
+          <img src="./src/images/YoutubeLogo.svg" alt="Youtube">
+        </a>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div class="banner">
+      <div class="w-full overflow-hidden flex">
+        <h2 class="animateText" id="firstBannerText">
+          <span>喵貓權益</span><br>
+          <span class="flex">我帶頭
+            <img src="./src/images/Planet.svg" alt="">
+          </span>
+        </h2>
+        <h2 class="animateText" id="secondBannerText">
+          <span>喵貓權益</span><br>
+          <span class="flex">
+            我帶頭<img src="./src/images/Planet.svg" alt="">
+          </span>
+        </h2>
+        <h2 class="animateText" id="thirdBannerText">
+          <span>喵貓權益</span><br>
+          <span class="flex">
+            我帶頭<img src="./src/images/Planet.svg" alt="">
+          </span>
+        </h2>
+      </div>
+      <div class="absolute -bottom-4 -right-4">
+        <img src="./src/images/banner貓.png" alt="">
+        <button type="button" class="btn-sm absolute bottom-8 left-8">
+          候選人簡介
+          <img src="./src/images/ArrowRight.svg" alt="">
+        </button>
+      </div>
+      <p class="absolute flex gap-2 items-center text-5xl font-bold bg-Grayscale-5 rounded-sp-6 text-Primary-3 px-sp-4 py-3 top-1/2 -translate-y-1/2 -left-5">
+        <img src="./src/images/vote.svg" alt="">
+        立委請支持<span class="rounded-sp-5 border-Primary-3 border-2 w-sp-6 h-sp-6 flex justify-center items-center pr-1">1</span>黑新星
+        <img src="./src/images/vote.svg" alt="">
+      </p>
+    </div>
+    <div class="flex gap-sp-4">
+      <h3 class="maintitle">
+        候選主張<span>Candidate Claims</span>
+      </h3>
+      <div class="text-xl/[30px] text-Grayscale-4">
+        <p>我黑新星堅信，藉由推動更完善的貓咪福利和相關政策，更是間接地投資於台灣的未來。畢竟，民眾的身心健康與工作熱情是推動經濟的核心動力。透過完善的貓咪福利政策，為台灣的 GDP 經濟帶來巨大效益。
+          <br>
+          <br>
+          因此，我期望能在立法院內推進這些政策，確保每一隻貓咪都能得到他們應有的照顧，同時也為台灣的經濟發展助一臂之力。讓我們一同護航台灣的幸福經濟，從照顧每一隻貓咪開始。
+        </p>
+      </div>
+    </div>
+    <div class="flex gap-sp-4">
+      <h3 class="maintitle">
+        最新活動<span>Latest Events</span>
+      </h3>
+      <ul>
+        <li>
+          <img src="" alt="">
+        </li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+  </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script type="module" src="/main.js"></script>
+</body>
+
 </html>

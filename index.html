@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500;700&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="./favicon.ico" type="image/x-icon" />
   <title>2023 F2E 立委競選官網</title>
 </head>
 
@@ -40,8 +41,9 @@
       </div>
     </nav>
   </header>
-  <main>
-    <div class="banner">
+  <main class="px-16 flex flex-col gap-y-sp-6">
+    <!-- banner -->
+    <div class="rounded-sp-3 bg-Grayscale-2 relative">
       <div class="w-full overflow-hidden flex">
         <h2 class="animateText" id="firstBannerText">
           <span>喵貓權益</span><br>
@@ -75,6 +77,7 @@
         <img src="./src/images/vote.svg" alt="">
       </p>
     </div>
+    <!-- 候選主張 -->
     <div class="flex gap-sp-4">
       <h3 class="maintitle">
         候選主張<span>Candidate Claims</span>
@@ -87,19 +90,162 @@
         </p>
       </div>
     </div>
+    <!-- 最新活動 -->
     <div class="flex gap-sp-4">
       <h3 class="maintitle">
         最新活動<span>Latest Events</span>
       </h3>
-      <ul>
+      <ul class="eventList space-y-sp-4">
         <li>
-          <img src="" alt="">
+          <div>
+            <div class="eventImg">
+              <img src="./src/images/event1.png" alt="">
+            </div>
+            <div class="eventImgShadow"></div>
+          </div>
+          <div>
+            <p class="smallTitle">參與台北寵物論壇，爭取貓咪友善環境</p>
+            <p class="twoLineHiddenText">炎炎夏日的周六，我走進了台北寵物論壇，帶著一副貓耳髮箍，決定要全力宣傳「貓咪至上」的理念！我相信，我們的都市中，每一隻貓咪都應該有自己的 VIP 休憩空間。</p>
+            <div class="eventFooter">
+              <span>12.26.2023</span>
+              <a href="#" class="btn-sm">
+                閱讀更多
+                <img src="./src/images/ArrowRight.svg" alt="">
+              </a>
+            </div>
+          </div>
         </li>
-        <li></li>
-        <li></li>
+        <li>
+          <div>
+            <div class="eventImg">
+              <img src="./src/images/event2.png" alt="">
+            </div>
+            <div class="eventImgShadow"></div>
+          </div>
+          <div>
+            <p class="smallTitle">掃街模式開啟！帶著你的貓耳，和我一起走！</p>
+            <p class="twoLineHiddenText">街上氣氛真的很棒，從小孩到大人，甚至有些狗狗朋友都帶著貓耳來找我握手，真的太可愛了！這次的活動不僅讓我看到大家的熱情，更加堅定了我推進「貓咪友善環境」政策的決心。</p>
+            <div class="eventFooter">
+              <span>12.24.2023</span>
+              <a href="#" class="btn-sm">
+                閱讀更多
+                <img src="./src/images/ArrowRight.svg" alt="">
+              </a>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div>
+            <div class="eventImg">
+              <img src="./src/images/event3.png" alt="">
+            </div>
+            <div class="eventImgShadow"></div>
+          </div>
+          <div>
+            <p class="smallTitle">收容所模特兒大比拼！</p>
+            <p class="twoLineHiddenText">今天的收容所不再是一片寂靜。為了讓更多人認識到這裡的毛孩子，我們舉辦了一場前所未有的「模特兒走秀」！</p>
+            <div class="eventFooter">
+              <span>12.20.2023</span>
+              <a href="#" class="btn-sm">
+                閱讀更多
+                <img src="./src/images/ArrowRight.svg" alt="">
+              </a>
+            </div>
+          </div>
+        </li>
       </ul>
     </div>
+    <!-- 政策議題 -->
+    <div class="flex flex-col gap-sp-4">
+      <h3 class="maintitle">
+        政策議題<span>Policy Issues</span>
+      </h3>
+      <div>
+        <div class="grid grid-cols-3">
+          <button type="button">寵物醫療保障方案</button>
+          <button type="button">寵物休閒與娛樂場所</button>
+          <button type="button">推廣寵物飼養教育</button>
+        </div>
+        <div>
+          <p id="" class="smallTitle">為毛孩子謀福利！推動寵物醫療保障方案</p>
+        </div>
+      </div>
+    </div>
   </main>
+  
+  <footer class="bg-Grayscale-5 text-Grayscale-0 px-sp-6 py-sp-4 mt-sp-6">
+    <div class="flex justify-between items-start">
+      <img src="./public/logo-G.svg" alt="候選人03黑新星">
+      <div class="flex gap-x-sp-4">
+        <div>
+          <p class="text-Primary-3 text-base/[28px] mb-4">快速連結</p>
+          <ul class="space-y-1">
+            <li>
+              <a href="#">首頁</a>
+            </li>
+            <li>
+              <a href="">最新活動</a>
+            </li>
+            <li>
+              <a href="#">政策議題</a>
+            </li>
+            <li>
+              <a href="#">小額捐款</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-Primary-3 text-base/[28px] mb-4">與我們聯繫</p>
+          <ul class="space-y-1">
+            <li class="flex gap-1 items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <g clip-path="url(#clip0_42_1296)">
+                  <path d="M8 8.5C9.10457 8.5 10 7.60457 10 6.5C10 5.39543 9.10457 4.5 8 4.5C6.89543 4.5 6 5.39543 6 6.5C6 7.60457 6.89543 8.5 8 8.5Z" stroke="#D1FA31" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M13 6.5C13 11 8 14.5 8 14.5C8 14.5 3 11 3 6.5C3 5.17392 3.52678 3.90215 4.46447 2.96447C5.40215 2.02678 6.67392 1.5 8 1.5C9.32608 1.5 10.5979 2.02678 11.5355 2.96447C12.4732 3.90215 13 5.17392 13 6.5Z" stroke="#D1FA31" stroke-linecap="round" stroke-linejoin="round"/>
+                </g>
+                <defs>
+                  <clipPath id="clip0_42_1296">
+                    <rect width="16" height="16" fill="white"/>
+                  </clipPath>
+                </defs>
+              </svg>
+              新星區閃耀大道88號  喵喵大樓3樓
+            </li>
+            <li class="flex gap-1 items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <g clip-path="url(#clip0_42_1299)">
+                  <path d="M10.2744 9.08374C10.3436 9.03766 10.4233 9.00958 10.5061 9.00205C10.5889 8.99452 10.6723 9.00778 10.7488 9.04061L13.6963 10.3612C13.7956 10.4037 13.8785 10.4772 13.9326 10.5707C13.9867 10.6642 14.009 10.7727 13.9963 10.88C13.8991 11.6056 13.5418 12.2713 12.9907 12.7533C12.4395 13.2352 11.7321 13.5005 11 13.5C8.74566 13.5 6.58365 12.6045 4.98959 11.0104C3.39553 9.41633 2.5 7.25433 2.5 4.99999C2.49944 4.26786 2.7648 3.56045 3.24673 3.00932C3.72865 2.45818 4.39435 2.10084 5.12 2.00374C5.22727 1.99099 5.33578 2.01333 5.4293 2.06741C5.52281 2.12149 5.5963 2.2044 5.63875 2.30374L6.95938 5.25374C6.99182 5.3295 7.00504 5.41212 6.99784 5.49423C6.99064 5.57634 6.96326 5.65539 6.91813 5.72436L5.5825 7.31249C5.53512 7.38398 5.50711 7.46653 5.50119 7.55209C5.49528 7.63765 5.51166 7.72328 5.54875 7.80061C6.06563 8.85874 7.15938 9.93936 8.22063 10.4512C8.29836 10.4882 8.38439 10.5042 8.47021 10.4977C8.55602 10.4912 8.63867 10.4625 8.71 10.4144L10.2744 9.08374Z" stroke="#D1FA31" stroke-linecap="round" stroke-linejoin="round"/>
+                </g>
+                <defs>
+                  <clipPath id="clip0_42_1299">
+                    <rect width="16" height="16" fill="white"/>
+                  </clipPath>
+                </defs>
+              </svg>
+              <a href="tel:+88628885678">(02) 888-5678</a>
+            </li>
+            <li class="flex gap-1 items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <g clip-path="url(#clip0_42_1302)">
+                  <path d="M14 3.5L8 9L2 3.5" stroke="#D1FA31" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M2 3.5H14V12C14 12.1326 13.9473 12.2598 13.8536 12.3536C13.7598 12.4473 13.6326 12.5 13.5 12.5H2.5C2.36739 12.5 2.24021 12.4473 2.14645 12.3536C2.05268 12.2598 2 12.1326 2 12V3.5Z" stroke="#D1FA31" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M6.9093 8L2.1543 12.3588" stroke="#D1FA31" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M13.8458 12.3588L9.09082 8" stroke="#D1FA31" stroke-linecap="round" stroke-linejoin="round"/>
+                </g>
+                <defs>
+                  <clipPath id="clip0_42_1302">
+                    <rect width="16" height="16" fill="white"/>
+                  </clipPath>
+                </defs>
+              </svg>
+              <a href="mailto:supernova.black@gmail.com">supernova.black@gmail.com</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <p class="text-center text-sm/[24px] font-normal mt-6">© 2023 黑新星 Supernova Black 版權所有。</p>
+  </footer>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <script type="module" src="/main.js"></script>

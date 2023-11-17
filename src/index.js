@@ -113,7 +113,7 @@ function updateData() {
 
                 const listBG = document.createElement("img");
                 listBG.className = "absolute top-16 -z-10";
-                listBG.src = "../src/images/IssueBackground.svg";
+                listBG.src = "/2023F2Emission1/IssueBackground.svg";
 
                 listItem.appendChild(listImg);
                 listItem.appendChild(listTitle);

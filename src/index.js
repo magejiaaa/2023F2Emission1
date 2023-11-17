@@ -19,9 +19,10 @@ createBannerAnimation("#thirdBannerText");
 
 
 // 政策議題內容替換
+const changeLine = window.innerWidth < 768 ? "<br>" : "";
 const issues = [
     {
-        title: "為毛孩子謀福利！推動寵物醫療保障方案",
+        title: "為毛孩子謀福利！" + changeLine + "推動寵物醫療保障方案",
         content: [
             {
                 img: "./src/images/PiggyBank.svg",
@@ -41,7 +42,7 @@ const issues = [
         ],
     },
     {
-        title: "打造休閒天堂！推廣寵物休閒與娛樂場所",
+        title: "打造休閒天堂！" + changeLine + "推廣寵物休閒與娛樂場所",
         content: [
             {
                 img: "./src/images/Park.svg",
@@ -88,7 +89,7 @@ const contentElement = document.getElementById("issuesContent");
 
 // 更新資料函式
 function updateData() {
-    titleElement.textContent = issues[currentIssueIndex].title;
+    titleElement.innerHTML = issues[currentIssueIndex].title;
     gsap.to(contentElement, {
         opacity: 0,
         duration: 0.3,
@@ -165,19 +166,71 @@ function scrollToElement(elementId) {
 }
 
 // 設定點擊事件
-function setupClickHandler(linkId, targetId) {
-    const link = document.querySelector(linkId);
-    if (link) {
+function setupClickHandler(linkClass, targetId) {
+    const links = document.querySelectorAll(linkClass);
+    links.forEach(link => {
         link.addEventListener('click', function(event) {
             event.preventDefault();
             scrollToElement(targetId);
         });
-    }
+    });
 }
 
 // 設定不同連結的點擊事件
-setupClickHandler('#CandidateLink', '#Candidate');
-setupClickHandler('#DonationsLink', '#Donations');
-setupClickHandler('#EventsLink', '#Events');
-setupClickHandler('#IssuesLink', '#Issues');
-setupClickHandler('#ServiceLink', '#Service');
+setupClickHandler('.CandidateLink', '#Candidate');
+setupClickHandler('.DonationsLink', '#Donations');
+setupClickHandler('.EventsLink', '#Events');
+setupClickHandler('.IssuesLink', '#Issues');
+setupClickHandler('.ServiceLink', '#Service');
+
+// 最上方
+const scrollToTop = document.getElementsByClassName("indexLink");
+Array.from(scrollToTop).forEach(function(button) {
+    button.addEventListener("click", function(event) {
+        event.preventDefault();
+        gsap.to(window, {
+            duration: 1,
+            scrollTo: {
+                y: 0
+            }
+        })
+    });
+})
+
+
+// 手機版選單
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.getElementById("navMenu");
+const main = document.getElementsByTagName('main')[0];
+const header = document.getElementsByTagName('header')[0];
+const logo = header.querySelector('.logo');
+
+// 點擊 document 時隱藏選單
+main.addEventListener("click", function(event) {
+    if (event.target !== navMenu && event.target !== hamburger) {
+        gsap.to(navMenu, {
+            duration: 0.5,
+            x: '100%',
+            onComplete: function () {
+                navMenu.classList.remove('fixed');
+                navMenu.classList.add('hidden');
+                gsap.set(navMenu, { x: "0%" });
+            },
+        }).to(main, {
+            duration: 0.5,
+            "--myBlur": 0,
+        })
+    }
+});
+// 顯示選單
+hamburger.addEventListener("click", function() {
+    navMenu.classList.remove('hidden');
+    navMenu.classList.add('fixed');
+    gsap.from(navMenu, {
+        duration: 0.5,
+        x: '100%'
+    }).to(main, {
+        duration: 0.5,
+        "--myBlur": 4,
+    })
+})

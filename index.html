@@ -7,25 +7,37 @@
   <!-- google font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500;700&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
   <link rel="icon" href="./favicon.ico" type="image/x-icon" />
   <title>2023 F2E 立委競選官網</title>
 </head>
 
 <body>
   <!-- 選單 -->
-  <header class="px-16 py-4 fixed top-0 inset-x-0 bg-Grayscale-0 z-20">
-    <nav class="flex justify-between items-center">
-      <h1 class="logo">候選人03黑新星</h1>
-      <div class="flex gap-x-sp-3 flex-none">
-        <a class="btn-sm" href="#Donations" id="DonationsLink">
+  <header class="p-sp-3 md:px-16 md:py-4 fixed top-0 inset-x-0 bg-Grayscale-0 z-20 flex justify-between items-center">
+    <!-- 手機版 -->
+    <div class="logo md:hidden">
+      <a href="#" class="indexLink absolute inset-0">候選人03黑新星</a>
+    </div>
+    <div class="w-sp-5 h-sp-5 p-2 flex flex-col justify-center space-y-2 md:hidden bg-Grayscale-0" id="hamburger">
+      <span class="block h-[2px] bg-Grayscale-5 rounded-sm"></span>
+      <span class="block h-[2px] bg-Grayscale-5 rounded-sm"></span>
+      <span class="block h-[2px] bg-Grayscale-5 rounded-sm"></span>
+    </div>
+    <!-- 電腦版 -->
+    <nav class="hidden bg-Grayscale-0 justify-between items-center w-3/5 right-0 inset-y-0 md:flex md:w-full flex-wrap px-sp-3 py-sp-4 md:p-0" id="navMenu">
+      <h1 class="logo">
+        <a href="#" class="indexLink absolute inset-0">候選人03黑新星</a>
+      </h1>
+      <div class="flex flex-col md:flex-row gap-x-sp-3 flex-none">
+        <a class="btn-sm DonationsLink" href="#Donations">
           <img class="w-6" src="./src/images/HandCoins.svg" alt="">小額捐款
         </a>
         <ul class="flex gap-x-sp-4 items-center">
-          <li><a href="#Candidate" id="CandidateLink">候選主張</a></li>
-          <li><a href="#Events" id="EventsLink">最新活動</a></li>
-          <li><a href="#Issues" id="IssuesLink">政策議題</a></li>
-          <li><a href="#Service" id="ServiceLink">服務信箱</a></li>
+          <li><a href="#Candidate" class="CandidateLink">候選主張</a></li>
+          <li><a href="#Events" class="EventsLink">最新活動</a></li>
+          <li><a href="#Issues" class="IssuesLink">政策議題</a></li>
+          <li><a href="#Service" class="ServiceLink">服務信箱</a></li>
         </ul>
       </div>
       <div class="mediaIcon">
@@ -41,10 +53,10 @@
       </div>
     </nav>
   </header>
-  <main class="px-16 flex flex-col gap-y-sp-6 mt-20">
+  <main class="md:px-16 flex flex-col gap-y-sp-4 md:gap-y-sp-6 mt-20 md:mt-[120px] lg:mt-20 blur-[--myBlur]">
     <!-- banner -->
-    <div class="rounded-sp-3 bg-Grayscale-2 relative">
-      <div class="w-full overflow-hidden flex">
+    <div class="mt-[343px] md:mt-0 relative flex justify-center">
+      <div class="w-full overflow-hidden flex rounded-sp-3 bg-Grayscale-2">
         <h2 class="animateText" id="firstBannerText">
           <span>喵貓權益</span><br>
           <span class="flex">我帶頭
@@ -64,25 +76,27 @@
           </span>
         </h2>
       </div>
-      <div class="absolute -bottom-4 -right-4">
-        <img src="./src/images/banner貓.png" alt="">
-        <button type="button" class="btn-sm absolute bottom-8 left-8">
+      <div class="absolute -top-[321px] max-w-[343px] md:max-w-none mx-auto flex justify-center md:block inset-x-0 md:inset-auto md:top-auto md:-bottom-4 md:-right-4">
+        <img class="w-[90%] max-w-[305px] md:max-w-none md:w-auto" src="./src/images/banner貓.png" alt="">
+        <button type="button" class="btn-sm absolute bottom-10 md:bottom-8 left-0 md:left-8">
           候選人簡介
           <img src="./src/images/ArrowRight.svg" alt="">
         </button>
       </div>
-      <p class="absolute flex gap-2 items-center text-5xl font-bold bg-Grayscale-5 rounded-sp-6 text-Primary-3 px-sp-4 py-3 top-1/2 -translate-y-1/2 -left-5">
-        <img src="./src/images/vote.svg" alt="">
-        立委請支持<span class="rounded-sp-5 border-Primary-3 border-2 w-sp-6 h-sp-6 flex justify-center items-center pr-1">1</span>黑新星
-        <img src="./src/images/vote.svg" alt="">
+      <p class="absolute flex gap-2 items-center text-2xl/[36px] md:text-5xl font-bold bg-Grayscale-5 rounded-sp-5 md:rounded-sp-6 text-Primary-3 px-sp-3 md:px-sp-4 py-sp-1 md:py-3 top-1/2 -translate-y-1/2 md:-left-5">
+        <img class="w-8 md:w-auto" src="./src/images/vote.svg" alt="">
+        立委請支持
+        <span class="rounded-sp-5 border-Primary-3 border-2 w-sp-4 h-sp-4 md:w-sp-6 md:h-sp-6 flex justify-center items-center md:pr-1">1</span>
+        黑新星
+        <img class="w-8 md:w-auto" src="./src/images/vote.svg" alt="">
       </p>
     </div>
     <!-- 候選主張 -->
-    <div class="flex gap-sp-4" id="Candidate">
+    <div class="flex flex-wrap gap-sp-3 md:gap-sp-4 px-sp-3 md:px-0" id="Candidate">
       <h3 class="maintitle">
         候選主張<span>Candidate Claims</span>
       </h3>
-      <div class="text-xl/[30px] text-Grayscale-4">
+      <div class="text-base/7 md:text-xl/[30px] text-Grayscale-4">
         <p>我黑新星堅信，藉由推動更完善的貓咪福利和相關政策，更是間接地投資於台灣的未來。畢竟，民眾的身心健康與工作熱情是推動經濟的核心動力。透過完善的貓咪福利政策，為台灣的 GDP 經濟帶來巨大效益。
           <br>
           <br>
@@ -91,7 +105,7 @@
       </div>
     </div>
     <!-- 最新活動 -->
-    <div class="flex gap-sp-4" id="Events">
+    <div class="flex flex-col lg:flex-row gap-sp-3 md:gap-sp-4 px-sp-3 md:px-0" id="Events">
       <h3 class="maintitle">
         最新活動<span>Latest Events</span>
       </h3>
@@ -156,74 +170,74 @@
       </ul>
     </div>
     <!-- 政策議題 -->
-    <div class="flex flex-col gap-sp-4" id="Issues">
+    <div class="flex flex-col lg:flex-row gap-sp-3 md:gap-sp-4 px-sp-3 md:px-0" id="Issues">
       <h3 class="maintitle">
         政策議題<span>Policy Issues</span>
       </h3>
       <div>
         <div class="grid grid-cols-3">
           <button class="changeIssueBtn active" type="button" value="0">寵物醫療保障方案</button>
-          <button class="changeIssueBtn" type="button" value="1">寵物休閒與娛樂場所</button>
+          <button class="changeIssueBtn px-1 md:px-4" type="button" value="1">寵物休閒與娛樂場所</button>
           <button class="changeIssueBtn" type="button" value="2">推廣寵物飼養教育</button>
         </div>
-        <div class="p-sp-4 flex flex-col gap-sp-5 items-center bg-Primary-1 rounded-b-sp-3">
-          <p id="issuesTitle" class="smallTitle"></p>
-          <ul id="issuesContent" class="flex w-full justify-around"></ul>
+        <div class="px-4 py-8 md:p-sp-4 flex flex-col gap-sp-5 items-center bg-Primary-1 rounded-b-sp-3">
+          <p id="issuesTitle" class="smallTitle text-center"></p>
+          <ul id="issuesContent" class="flex flex-col gap-sp-4 lg:gap-auto lg:flex-row w-full items-center lg:justify-around"></ul>
         </div>
       </div>
     </div>
     <!-- 小額捐款 -->
-    <div class="flex gap-sp-4" id="Donations">
+    <div class="flex flex-col lg:flex-row gap-sp-4 px-sp-3 md:px-0" id="Donations">
       <!-- 左 -->
-      <div class="flex flex-col w-2/5">
-        <h3 class="maintitle mb-sp-4">
+      <div class="flex flex-col lg:w-2/5">
+        <h3 class="maintitle mb-sp-3 md:mb-sp-4">
           小額捐款<span>Small Donations</span>
         </h3>
-        <p class="text-[28px]/[42px] font-bold flex-auto">
-          您的每筆捐款，<br>
+        <p class="text-[28px]/[42px] font-bold flex-auto mb-sp-3">
+          您的每筆捐款，<br class="hidden md:inline">
           是每隻毛孩未來的大大動力！
         </p>
-        <div class="rounded-sp-3 bg-Grayscale-5 text-Primary-3 px-sp-4 py-sp-3 text-xl/[30px]">
+        <div class="rounded-sp-3 bg-Grayscale-5 text-Primary-3 p-sp-3 md:px-sp-4 text-xl/[30px]">
           <p>目前贊助總金額</p>
           <p class="maintitle text-Primary-3 mt-1">987,655,873</p>
         </div>
       </div>
       <!-- 右 -->
       <ul class="donationList">
-        <li>
+        <li class="group">
           <div>
-            <p class="smallTitle text-Grayscale-5 mb-sp-3">喵衛星｜<span class="text-base/[28px] text-Grayscale-3 ">NT$</span> 600</p>
+            <p class="smallTitle text-Grayscale-5 mb-sp-3 group-hover:text-Primary-3 transition-all">喵衛星｜<span class="text-base/[28px] text-Grayscale-3 ">NT$</span> 600</p>
             <p class="inline-block rounded-sp-2 bg-Primary-2 text-Grayscale-5 px-sp-3 py-sp-2 text-base/[28px]">已有 2,000 人贊助</p>
           </div>
-          <img src="./src/images/MoonStars.svg" alt="">
+          <img  class="hidden md:block" src="./src/images/MoonStars.svg" alt="">
         </li>
-        <li>
+        <li class="group">
           <div>
-            <p class="smallTitle text-Grayscale-5 mb-sp-3">喵行星｜<span class="text-base/[28px] text-Grayscale-3 ">NT$</span> 6,000</p>
+            <p class="smallTitle text-Grayscale-5 mb-sp-3 group-hover:text-Primary-3 transition-all">喵行星｜<span class="text-base/[28px] text-Grayscale-3 ">NT$</span> 6,000</p>
             <p class="inline-block rounded-sp-2 bg-Primary-2 text-Grayscale-5 px-sp-3 py-sp-2 text-base/[28px]">已有 2,000 人贊助</p>
           </div>
-          <img src="./src/images/Planet_gray.svg" alt="">
+          <img  class="hidden md:block" src="./src/images/Planet_gray.svg" alt="">
         </li>
-        <li>
+        <li class="group">
           <div>
-            <p class="smallTitle text-Grayscale-5 mb-sp-3">喵恆星｜<span class="text-base/[28px] text-Grayscale-3 ">NT$</span> 60,000</p>
+            <p class="smallTitle text-Grayscale-5 mb-sp-3 group-hover:text-Primary-3 transition-all">喵恆星｜<span class="text-base/[28px] text-Grayscale-3 ">NT$</span> 60,000</p>
             <p class="inline-block rounded-sp-2 bg-Primary-2 text-Grayscale-5 px-sp-3 py-sp-2 text-base/[28px]">已有 2,000 人贊助</p>
           </div>
-          <img src="./src/images/Sun.svg" alt="">
+          <img  class="hidden md:block" src="./src/images/Sun.svg" alt="">
         </li>
-        <li>
+        <li class="group">
           <div>
-            <p class="smallTitle text-Grayscale-5 mb-sp-3">喵彗星｜自訂贊助金額</p>
+            <p class="smallTitle text-Grayscale-5 mb-sp-3 group-hover:text-Primary-3 transition-all">喵彗星｜自訂贊助金額</p>
             <p class="inline-block rounded-sp-2 bg-Primary-2 text-Grayscale-5 px-sp-3 py-sp-2 text-base/[28px]">已有 2,000 人贊助</p>
           </div>
-          <img src="./src/images/ShootingStar.svg" alt="">
+          <img  class="hidden md:block" src="./src/images/ShootingStar.svg" alt="">
         </li>
       </ul>
     </div>
     <!-- 服務信箱 -->
-    <div class="flex gap-sp-4" id="Service">
+    <div class="flex flex-col lg:flex-row gap-sp-4 px-sp-3 md:px-0" id="Service">
       <!-- 左 -->
-      <div class="flex flex-col w-2/5">
+      <div class="flex flex-col lg:w-2/5">
         <h3 class="maintitle mb-sp-4">
           服務信箱<span>Service Mail</span>
         </h3>
@@ -232,53 +246,66 @@
       </div>
       <!-- 表單 -->
       <div class="relative z-10 flex-auto">
-        <form class="bg-Primary-1 rounded-sp-4 p-sp-4 space-y-sp-3">
+        <form class="bg-Primary-1 rounded-sp-3 md:rounded-sp-4 px-sp-3 py-sp-4 md:p-sp-4 flex flex-col gap-sp-3">
           <div class="flex flex-col gap-sp-2">
             <label for="name">姓名</label>
-            <input type="text" name="name" id="name" class="p-sp-3 border-Grayscale-1 border-2 rounded-sp-2 text-sm">
+            <input type="text" name="name" id="name" class="focus-visible:outline-Grayscale-3 p-sp-3 border-Grayscale-1 border-2 rounded-sp-2 text-sm">
           </div>
           <div class="flex flex-col gap-sp-2">
             <label for="email">Email</label>
-            <input type="email" name="email" id="email" class="p-sp-3 border-Grayscale-1 border-2 rounded-sp-2 text-sm">
+            <input type="email" name="email" id="email" class="focus-visible:outline-Grayscale-3 p-sp-3 border-Grayscale-1 border-2 rounded-sp-2 text-sm">
           </div>
           <div class="flex flex-col gap-sp-2">
             <label for="phone">電話 / 手機</label>
-            <input type="tel" name="phone" id="phone" class="p-sp-3 border-Grayscale-1 border-2 rounded-sp-2 text-sm">
+            <input type="tel" name="phone" id="phone" class="focus-visible:outline-Grayscale-3 p-sp-3 border-Grayscale-1 border-2 rounded-sp-2 text-sm">
           </div>
           <div class="flex flex-col gap-sp-2">
             <label for="suggestion">對我們的建議</label>
-            <textarea name="對我們的建議" id="suggestion" rows="4" class="p-sp-3 border-Grayscale-1 border-2 rounded-sp-2 text-sm"></textarea>
+            <textarea name="對我們的建議" id="suggestion" rows="4" class="focus-visible:outline-Grayscale-3 p-sp-3 border-Grayscale-1 border-2 rounded-sp-2 text-sm"></textarea>
           </div>
-          <button type="submit" class="btn-sm w-full px-sp-4 py-sp-3 text-xl/[30px] rounded-sp-3">確認送出</button>
+          <button type="submit" class="btn-sm w-full px-sp-4 py-sp-3 text-xl/[30px] rounded-sp-3 mt-8">確認送出</button>
         </form>
-        <img src="./src/images/Black-02.png" alt="" class="absolute bottom-0 -left-[225px] -z-10">
+        <img src="./src/images/Black-02.png" alt="" class="hidden lg:block absolute bottom-0 -left-[225px] -z-10">
       </div>
     </div>
   </main>
 
-  <footer class="bg-Grayscale-5 text-Grayscale-0 px-sp-6 py-sp-4 mt-sp-6">
-    <div class="flex justify-between items-start">
-      <img src="/logo-G.svg" alt="候選人03黑新星">
-      <div class="flex gap-x-sp-4">
+  <footer class="bg-Grayscale-5 text-Grayscale-0 px-sp-3 py-sp-4 md:px-sp-6 md:py-sp-4 mt-sp-4 md:mt-sp-6">
+    <div class="flex flex-col lg:flex-row justify-between items-start gap-sp-3">
+      <a href="#" class="indexLink">
+        <img src="/logo-G.svg" alt="候選人03黑新星">
+      </a>
+      <div class="mediaIcon md:hidden">
+        <a href="#">
+          <img src="./src/images/FacebookLogo-W.svg" alt="Facebook">
+        </a>
+        <a href="#">
+          <img src="./src/images/InstagramLogo-W.svg" alt="Instagram">
+        </a>
+        <a href="#">
+          <img src="./src/images/YoutubeLogo-W.svg" alt="Youtube">
+        </a>
+      </div>
+      <div class="flex flex-col lg:flex-row gap-sp-4">
         <div>
-          <p class="text-Primary-3 text-base/[28px] mb-4">快速連結</p>
-          <ul class="space-y-1">
+          <p class="text-Primary-3 text-base/[28px] mb-2 md:mb-4">快速連結</p>
+          <ul class="flex gap-sp-3 md:block md:space-y-1">
             <li>
-              <a href="#">首頁</a>
+              <a href="#" class="indexLink">首頁</a>
             </li>
             <li>
-              <a href="#Events">最新活動</a>
+              <a href="#Events" class="EventsLink">最新活動</a>
             </li>
             <li>
-              <a href="#Issues">政策議題</a>
+              <a href="#Issues" class="IssuesLink">政策議題</a>
             </li>
             <li>
-              <a href="#Donations">小額捐款</a>
+              <a href="#Donations" class="DonationsLink">小額捐款</a>
             </li>
           </ul>
         </div>
         <div>
-          <p class="text-Primary-3 text-base/[28px] mb-4">與我們聯繫</p>
+          <p class="text-Primary-3 text-base/[28px] mb-2 md:mb-4">與我們聯繫</p>
           <ul class="space-y-1">
             <li class="flex gap-1 items-center">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">

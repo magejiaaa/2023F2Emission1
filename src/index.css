@@ -19,11 +19,10 @@
         @apply hover:scale-125 duration-300 transition-all;
     }
     .animateText {
-        @apply text-Grayscale-0 text-[260px]/[320px] font-bold tracking-[13px] flex-none cursor-default select-none;
+        @apply text-Grayscale-0 text-[80px]/[120px] md:text-[260px]/[320px] font-bold tracking-[4px] md:tracking-[13px] flex-none cursor-default select-none;
     }
     .animateText img {
-        width: 200px;
-        display: inline-block;
+        @apply w-20 md:w-[200px] inline-block;
     }
     .maintitle {
         @apply text-Primary-5 text-5xl/[72px] font-bold flex flex-col gap-2 w-[264px] flex-none;
@@ -37,13 +36,13 @@
 
     /* 最新活動 */
     .eventList li {
-        @apply flex gap-x-sp-3 items-center;
+        @apply flex flex-col md:flex-row gap-y-sp-3 md:gap-x-sp-3 items-center;
     }
     .eventList li >div:first-child {
-        @apply w-1/3 relative mr-3 mb-3;
+        @apply md:w-1/3 relative mr-3 mb-3;
     }
     .eventList li >div:last-child {
-        @apply w-2/3 text-base/[28px] text-Grayscale-4 flex flex-col gap-2;
+        @apply md:w-2/3 text-base/[28px] text-Grayscale-4 flex flex-col gap-2;
     }
     .eventImg {
         @apply flex items-center justify-center rounded-sp-3 border-Primary-2 border-2 overflow-hidden;
@@ -80,7 +79,7 @@
         @apply flex-auto space-y-sp-3;
     }
     .donationList li {
-        @apply flex border-Primary-5 rounded-sp-3 border-2 px-sp-4 py-0.5 justify-between items-center;
+        @apply flex border-Primary-5 rounded-sp-3 border-2 p-sp-3 md:px-sp-4 md:py-0.5 justify-between items-center hover:bg-Grayscale-5 transition-all;
     }
 
     footer a {
@@ -91,6 +90,7 @@
 html,
 body {
     font-family: "Quicksand", "Noto Sans TC", sans-serif;
+    --myBlur: 0px;
 }
 
 .logo {
@@ -100,6 +100,7 @@ body {
     text-indent: 101%;
     overflow: hidden;
     white-space: nowrap;
+    position: relative;
 }
 
 .twoLineHiddenText {

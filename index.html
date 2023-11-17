@@ -16,7 +16,7 @@
   <!-- 選單 -->
   <header class="p-sp-3 md:px-16 md:py-4 fixed top-0 inset-x-0 bg-Grayscale-0 z-20 flex justify-between items-center">
     <!-- 手機版 -->
-    <div class="logo md:hidden">
+    <div class="logo md:hidden blur-[--myBlur]">
       <a href="#" class="indexLink absolute inset-0">候選人03黑新星</a>
     </div>
     <div class="w-sp-5 h-sp-5 p-2 flex flex-col justify-center space-y-2 md:hidden bg-Grayscale-0" id="hamburger">
@@ -25,30 +25,33 @@
       <span class="block h-[2px] bg-Grayscale-5 rounded-sm"></span>
     </div>
     <!-- 電腦版 -->
-    <nav class="hidden bg-Grayscale-0 justify-between items-center w-3/5 right-0 inset-y-0 md:flex md:w-full flex-wrap px-sp-3 py-sp-4 md:p-0" id="navMenu">
-      <h1 class="logo">
+    <nav class="hidden bg-Grayscale-0 md:justify-between md:items-center w-3/5 right-0 inset-y-0 md:flex flex-col md:flex-row md:w-full md:flex-wrap px-sp-3 py-sp-4 md:p-0" id="navMenu">
+      <h1 class="logo mb-sp-4 md:mb-0">
         <a href="#" class="indexLink absolute inset-0">候選人03黑新星</a>
       </h1>
-      <div class="flex flex-col md:flex-row gap-x-sp-3 flex-none">
+      <div class="flex flex-col pb-sp-3 md:pb-0 border-b border-Grayscale-1 md:border-none items-start md:items-center md:flex-row gap-sp-3 flex-none">
         <a class="btn-sm DonationsLink" href="#Donations">
           <img class="w-6" src="./src/images/HandCoins.svg" alt="">小額捐款
         </a>
-        <ul class="flex gap-x-sp-4 items-center">
+        <ul class="flex flex-col md:flex-row gap-y-sp-3 md:gap-y-0 gap-x-sp-4 items-center">
           <li><a href="#Candidate" class="CandidateLink">候選主張</a></li>
           <li><a href="#Events" class="EventsLink">最新活動</a></li>
           <li><a href="#Issues" class="IssuesLink">政策議題</a></li>
           <li><a href="#Service" class="ServiceLink">服務信箱</a></li>
         </ul>
       </div>
-      <div class="mediaIcon">
+      <div class="mediaIcon mt-sp-3 md:mb-0 flex-col md:flex-row">
         <a href="#">
           <img src="./src/images/FacebookLogo.svg" alt="Facebook">
+          <span class="inline md:hidden">Facebook</span>
         </a>
         <a href="#">
           <img src="./src/images/InstagramLogo.svg" alt="Instagram">
+          <span class="inline md:hidden">Instagram</span>
         </a>
         <a href="#">
           <img src="./src/images/YoutubeLogo.svg" alt="Youtube">
+          <span class="inline md:hidden">Youtube</span>
         </a>
       </div>
     </nav>
@@ -56,6 +59,7 @@
   <main class="md:px-16 flex flex-col gap-y-sp-4 md:gap-y-sp-6 mt-20 md:mt-[120px] lg:mt-20 blur-[--myBlur]">
     <!-- banner -->
     <div class="mt-[343px] md:mt-0 relative flex justify-center">
+      <!-- 動畫文字 -->
       <div class="w-full overflow-hidden flex rounded-sp-3 bg-Grayscale-2">
         <h2 class="animateText" id="firstBannerText">
           <span>喵貓權益</span><br>
@@ -76,19 +80,21 @@
           </span>
         </h2>
       </div>
-      <div class="absolute -top-[321px] max-w-[343px] md:max-w-none mx-auto flex justify-center md:block inset-x-0 md:inset-auto md:top-auto md:-bottom-4 md:-right-4">
+      <!-- 貓咪圖片 -->
+      <div class="absolute -top-[321px] max-w-[343px] md:max-w-none mx-auto flex justify-center md:block inset-x-0 md:inset-auto md:top-auto md:-bottom-40 lg:-bottom-4 md:-right-4">
         <img class="w-[90%] max-w-[305px] md:max-w-none md:w-auto" src="./src/images/banner貓.png" alt="">
         <button type="button" class="btn-sm absolute bottom-10 md:bottom-8 left-0 md:left-8">
           候選人簡介
           <img src="./src/images/ArrowRight.svg" alt="">
         </button>
       </div>
+      <!-- 黑色文字 -->
       <p class="absolute flex gap-2 items-center text-2xl/[36px] md:text-5xl font-bold bg-Grayscale-5 rounded-sp-5 md:rounded-sp-6 text-Primary-3 px-sp-3 md:px-sp-4 py-sp-1 md:py-3 top-1/2 -translate-y-1/2 md:-left-5">
-        <img class="w-8 md:w-auto" src="./src/images/vote.svg" alt="">
+        <img class="w-8 md:hidden lg:block lg:w-auto" src="./src/images/vote.svg" alt="">
         立委請支持
         <span class="rounded-sp-5 border-Primary-3 border-2 w-sp-4 h-sp-4 md:w-sp-6 md:h-sp-6 flex justify-center items-center md:pr-1">1</span>
         黑新星
-        <img class="w-8 md:w-auto" src="./src/images/vote.svg" alt="">
+        <img class="w-8 md:hidden lg:block lg:w-auto" src="./src/images/vote.svg" alt="">
       </p>
     </div>
     <!-- 候選主張 -->
@@ -286,7 +292,7 @@
           <img src="./src/images/YoutubeLogo-W.svg" alt="Youtube">
         </a>
       </div>
-      <div class="flex flex-col lg:flex-row gap-sp-4">
+      <div class="flex flex-col md:flex-row gap-sp-4">
         <div>
           <p class="text-Primary-3 text-base/[28px] mb-2 md:mb-4">快速連結</p>
           <ul class="flex gap-sp-3 md:block md:space-y-1">

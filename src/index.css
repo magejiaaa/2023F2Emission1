@@ -13,7 +13,10 @@
         @apply bg-Primary-3 text-Grayscale-5 flex items-center gap-x-2 px-sp-3 py-sp-2 rounded-sp-5 justify-center hover:bg-Primary-4 transition-all;
     }
     .mediaIcon {
-        @apply flex gap-x-sp-3;
+        @apply flex gap-sp-3;
+    }
+    .mediaIcon a {
+        @apply flex items-center gap-1;
     }
     .mediaIcon img {
         @apply hover:scale-125 duration-300 transition-all;
@@ -90,6 +93,9 @@
 html,
 body {
     font-family: "Quicksand", "Noto Sans TC", sans-serif;
+}
+
+html {
     --myBlur: 0px;
 }
 

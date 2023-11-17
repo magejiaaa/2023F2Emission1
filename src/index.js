@@ -16,8 +16,6 @@ createBannerAnimation("#firstBannerText");
 createBannerAnimation("#secondBannerText");
 createBannerAnimation("#thirdBannerText");
 
-
-
 // 政策議題內容替換
 const changeLine = window.innerWidth < 768 ? "<br>" : "";
 const issues = [
@@ -100,36 +98,36 @@ function updateData() {
             issues[currentIssueIndex].content.forEach(function (content) {
                 const listItem = document.createElement("li"); // 建立新的 <li> 元素
                 listItem.className = "flex flex-col max-w-[320px] items-center gap-sp-2 relative z-10";
-        
+
                 const listImg = document.createElement("img");
                 listImg.src = content.img;
-                listImg.className = "w-[128px]"
-        
+                listImg.className = "w-[128px]";
+
                 const listTitle = document.createElement("p");
                 listTitle.className = "issueListTitle";
                 listTitle.textContent = content.heading;
-        
+
                 const listContent = document.createElement("p");
                 listContent.className = "text-center text-Grayscale-4 text-base/[28px]";
                 listContent.textContent = content.caption;
-        
+
                 const listBG = document.createElement("img");
                 listBG.className = "absolute top-16 -z-10";
                 listBG.src = "../src/images/IssueBackground.svg";
-        
+
                 listItem.appendChild(listImg);
                 listItem.appendChild(listTitle);
                 listItem.appendChild(listContent);
                 listItem.appendChild(listBG);
-        
+
                 contentElement.appendChild(listItem);
             });
 
             gsap.to(contentElement, {
                 opacity: 1,
-                duration: 0.3
+                duration: 0.3,
             });
-        }
+        },
     });
 }
 
@@ -141,10 +139,10 @@ Array.from(changeIssueBtns).forEach(function (button) {
     button.addEventListener("click", function () {
         // 移除所有按鈕的 'active' 類別
         Array.from(changeIssueBtns).forEach(function (btn) {
-            btn.classList.remove('active');
+            btn.classList.remove("active");
         });
         // 將目前點擊的按鈕加上 'active' 類別
-        this.classList.add('active');
+        this.classList.add("active");
         const issueIndex = this.getAttribute("value");
         // 切換到指定的 issues 索引
         currentIssueIndex = issueIndex;
@@ -156,8 +154,11 @@ Array.from(changeIssueBtns).forEach(function (button) {
 // 初始顯示第一個資料
 updateData();
 
-
 // 選單跳轉
+const html = document.querySelector("html");
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.getElementById("navMenu");
+const main = document.getElementsByTagName("main")[0];
 function scrollToElement(elementId) {
     const element = document.querySelector(elementId);
     if (element) {
@@ -168,8 +169,11 @@ function scrollToElement(elementId) {
 // 設定點擊事件
 function setupClickHandler(linkClass, targetId) {
     const links = document.querySelectorAll(linkClass);
-    links.forEach(link => {
-        link.addEventListener('click', function(event) {
+    links.forEach((link) => {
+        link.addEventListener("click", function (event) {
+            if (window.innerWidth < 768) {
+                closeMenu();
+            }
             event.preventDefault();
             scrollToElement(targetId);
         });
@@ -177,60 +181,64 @@ function setupClickHandler(linkClass, targetId) {
 }
 
 // 設定不同連結的點擊事件
-setupClickHandler('.CandidateLink', '#Candidate');
-setupClickHandler('.DonationsLink', '#Donations');
-setupClickHandler('.EventsLink', '#Events');
-setupClickHandler('.IssuesLink', '#Issues');
-setupClickHandler('.ServiceLink', '#Service');
+setupClickHandler(".CandidateLink", "#Candidate");
+setupClickHandler(".DonationsLink", "#Donations");
+setupClickHandler(".EventsLink", "#Events");
+setupClickHandler(".IssuesLink", "#Issues");
+setupClickHandler(".ServiceLink", "#Service");
 
 // 最上方
 const scrollToTop = document.getElementsByClassName("indexLink");
-Array.from(scrollToTop).forEach(function(button) {
-    button.addEventListener("click", function(event) {
+Array.from(scrollToTop).forEach(function (button) {
+    button.addEventListener("click", function (event) {
         event.preventDefault();
         gsap.to(window, {
             duration: 1,
             scrollTo: {
-                y: 0
-            }
-        })
+                y: 0,
+            },
+        });
     });
-})
-
+});
 
 // 手機版選單
-const hamburger = document.getElementById("hamburger");
-const navMenu = document.getElementById("navMenu");
-const main = document.getElementsByTagName('main')[0];
-const header = document.getElementsByTagName('header')[0];
-const logo = header.querySelector('.logo');
+if (window.innerWidth < 768) {
+    // 點擊 document 時隱藏選單
+    main.addEventListener("click", function (event) {
+        if (event.target !== navMenu && event.target !== hamburger) {
+            closeMenu();
+        }
+    });
+    // 顯示選單
+    hamburger.addEventListener("click", function () {
+        html.style.overflow = "hidden";
+        navMenu.classList.remove("hidden");
+        navMenu.classList.add("fixed");
+        navMenu.classList.add("flex");
+        gsap.from(navMenu, {
+            duration: 0.5,
+            x: "100%",
+        });
+        gsap.to("html", {
+            duration: 0.5,
+            "--myBlur": 4
+        });
+    });
+}
 
-// 點擊 document 時隱藏選單
-main.addEventListener("click", function(event) {
-    if (event.target !== navMenu && event.target !== hamburger) {
-        gsap.to(navMenu, {
-            duration: 0.5,
-            x: '100%',
-            onComplete: function () {
-                navMenu.classList.remove('fixed');
-                navMenu.classList.add('hidden');
-                gsap.set(navMenu, { x: "0%" });
-            },
-        }).to(main, {
-            duration: 0.5,
-            "--myBlur": 0,
-        })
-    }
-});
-// 顯示選單
-hamburger.addEventListener("click", function() {
-    navMenu.classList.remove('hidden');
-    navMenu.classList.add('fixed');
-    gsap.from(navMenu, {
+function closeMenu() {
+    html.style.overflow = "auto";
+    gsap.to(navMenu, {
         duration: 0.5,
-        x: '100%'
-    }).to(main, {
+        x: "100%",
+        onComplete: function () {
+            navMenu.classList.remove("fixed");
+            navMenu.classList.add("hidden");
+            gsap.set(navMenu, { x: "0%" });
+        },
+    });
+    gsap.to("html", {
         duration: 0.5,
-        "--myBlur": 4,
-    })
-})
+        "--myBlur": 0
+    });
+}
